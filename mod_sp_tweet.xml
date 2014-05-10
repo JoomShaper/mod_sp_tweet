@@ -9,6 +9,11 @@
   <authorUrl>www.joomshaper.com</authorUrl>
   <version>2.3.0</version>
   <description>Twitter module for Joomla by JoomShaper.com</description>
+
+  <updateservers> 
+    <server type="extension" priority="1" name="SP Tweet">http://www.joomshaper.com/updates/mod_sp_tweet.xml</server>
+  </updateservers>
+
   <languages>
     <language tag="en-GB">language/en-GB.mod_sp_tweet.ini</language>
   </languages>
