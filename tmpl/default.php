@@ -12,7 +12,7 @@
 ?>
 
 <div class="sp-tweet">
-    <?php foreach($data as $i=>$value) { print_r($data); ?>
+    <?php foreach($data as $i=>$value) { ?>
 		<?php  if ( $params->get('animation')=='none' ) { ?>
         <div class="sp-tweet-item <?php echo ($i%2) ? 'sp-tweet-even' : 'sp-tweet-odd' ?><?php if ($i===0) echo ' sp-tweet-first' ?>">
 		<?php } else { ?>
@@ -50,7 +50,7 @@
 				<?php if($tweet_time || $tweet_src ) { ?>
 					<br />
 				<?php } ?>
-				<?php echo $helper->prepareTweet($value['text'])  ///////////////////////////////////////////////?> 
+				<?php echo $helper->prepareTweet($value['text']) ?> 
             <div class="sp-tweet-clr"></div>
         </div>
     <?php } ?>

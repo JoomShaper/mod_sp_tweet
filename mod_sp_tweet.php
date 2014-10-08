@@ -30,7 +30,6 @@
     $moduleID               = $module->id;
     $document               = JFactory::getDocument();
     $cssFile                = JPATH_THEMES. '/'.$document->template.'/css/'.$moduleName.'.css';
-    //$protocol               = $params->set('protocol',($force_ssl ? 'https://' : 'http://'));
 
     // Include helper.php
     require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'helper.php');
