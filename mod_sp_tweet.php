@@ -25,10 +25,12 @@
     $tweet_time_linked		= $params->get ('tweet_time_linked',1);
     $tweet_src				= $params->get ('tweet_src',1);
     $target                 = $params->get ('target','_blank');
+    $force_ssl              = $params->get ('force_ssl',0);
     $moduleName             = basename(dirname(__FILE__));
     $moduleID               = $module->id;
     $document               = JFactory::getDocument();
     $cssFile                = JPATH_THEMES. '/'.$document->template.'/css/'.$moduleName.'.css';
+    //$protocol               = $params->set('protocol',($force_ssl ? 'https://' : 'http://'));
 
     // Include helper.php
     require_once (dirname(__FILE__).DIRECTORY_SEPARATOR.'helper.php');

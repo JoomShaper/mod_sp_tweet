@@ -38,9 +38,17 @@
 			<div class="sp-tweet-clr"></div>
 			<div class="tweet-user-info">
 				<?php if ($linked_avatar) { ?>
-					<a target="<?php echo $target ?>" href="http://twitter.com/<?php echo $value['user']['screen_name'] ?>"><img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" /></a>
+					<?php if($force_ssl)  { ?>
+						<a target="<?php echo $target ?>" href="https://twitter.com/<?php echo $value['user']['screen_name'] ?>"><img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url_https'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" /></a>
+					<?php } else { ?>
+						<a target="<?php echo $target ?>" href="http://twitter.com/<?php echo $value['user']['screen_name'] ?>"><img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" /></a>
+					<?php } ?>
 				<?php } else { ?>
-					<img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" />
+					<?php if($force_ssl)  { ?>
+						<img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url_https'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" />
+					<?php } else { ?>
+						<img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" />
+					<?php } ?>
 				<?php } ?>	
 				<div class="author"><a target="<?php echo $target ?>" href="http://twitter.com/<?php echo $data[0]['user']['screen_name'] ?>"><?php echo $data[0]['user']['name'] ?></a></div>
 					<?php if($tweet_time) { ?>

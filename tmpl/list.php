@@ -17,11 +17,11 @@
 			<div class="tweet-user-info">
 				<?php if ($avatar) { ?>
                 <?php if ($linked_avatar) { ?>
-                    <a target="<?php echo $target ?>" href="http://twitter.com/<?php echo $value['user']['screen_name'] ?>">
+                    <a target="<?php echo $target ?>" href="<?php echo $helper->getProtocol(); ?>twitter.com/<?php echo $value['user']['screen_name'] ?>">
                         <img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url'] ?>" alt="<?php echo $value['user']['name'] ?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" height="<?php echo $avatar_width ?>" />
                     </a>
                     <?php } else { ?>
-                    <img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url']  ?>" alt="<?php echo $value['user']['name']?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" height="<?php echo $avatar_width ?>" />				
+                    	<img class="tweet-avatar" src="<?php echo $value['user']['profile_image_url']  ?>" alt="<?php echo $value['user']['name']?>" title="<?php echo $value['user']['name'] ?>" width="<?php echo $avatar_width ?>" height="<?php echo $avatar_width ?>" />				
                     <?php } ?>				
                 <?php } ?>	
 			</div>
@@ -39,7 +39,7 @@
 						<div class="bubble-m">
 							<?php if($tweet_time) { ?>
 								<?php if ($tweet_time_linked) { ?>
-									<div class="date"><a target="<?php echo $target ?>" href="http://twitter.com/<?php echo $value['user']['screen_name'] ?>/status/<?php 
+									<div class="date"><a target="<?php echo $target ?>" href="<?php echo $helper->getProtocol(); ?>twitter.com/<?php echo $value['user']['screen_name'] ?>/status/<?php 
 									echo  $value['id_str'] ?>"><?php echo  JText::_('ABOUT') . '&nbsp;' . $helper->timeago( $value['created_at'] ) . '&nbsp;' . JText::_('AGO');    ?></a></div>	
 									<?php } else { ?>	
 									<div class="date"><?php echo $value['created_at'] ?></div>	
@@ -67,6 +67,6 @@
 </div>
 
 <?php if ($follow_us) { ?> 
-	<a class="followme" target="<?php echo $target ?>" href="http://twitter.com/<?php echo $data[0]['user']['screen_name'] ?>"><?php echo JText::_('FOLLOW') . ' ' . $data[0]['user']['name'] . ' ' . JText::_('ON_TWITTER') ?></a>
+	<a class="followme" target="<?php echo $target ?>" href="<?php echo $helper->getProtocol(); ?>twitter.com/<?php echo $data[0]['user']['screen_name'] ?>"><?php echo JText::_('FOLLOW') . ' ' . $data[0]['user']['name'] . ' ' . JText::_('ON_TWITTER') ?></a>
 <?php } ?>
 <div class="sp-tweet-clr"></div>
