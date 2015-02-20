@@ -18,16 +18,17 @@
 		private $params;
 		private $cacheParams=array();
 		private $api;
+		private $http_protocol;
 		
 		//Initiate configurations
 		public function __construct($params, $id) {
 			jimport('joomla.filesystem.file');
 			$this->moduleID = $id;
 			$this->params = $params;
+			$this->setProtocol();
 
 			return $this;
 		}
-
 
 		/**
 		* Simple catching functionn
@@ -135,18 +136,19 @@
 			$pattern = '/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/i';
 			$replacement = '<a target="' . $this->params->get('target') . '" class="tweet_url" href="$1">$1</a>';
 			$string = preg_replace($pattern, $replacement, $string);
+			$protocol = $this->getProtocol();
 
 			//Search
 			if ($this->params->get('linked_search')==1) {
 				$pattern = '/[\#]+([A-Za-z0-9-_]+)/i';
-				$replacement = ' <a target="' . $this->params->get('target') . '" class="tweet_search" href="http://search.twitter.com/search?q=$1">#$1</a>';
+				$replacement = ' <a target="' . $this->params->get('target') . '" class="tweet_search" href="'. $protocol .'search.twitter.com/search?q=$1">#$1</a>';
 				$string = preg_replace($pattern, $replacement, $string);
 			}
 
 			//Mention
 			if ($this->params->get('linked_mention')==1) {
 				$pattern = '/\s[\@]+([A-Za-z0-9-_]+)/i';
-				$replacement = ' <a target="' . $this->params->get('target') . '" class="tweet_mention" href="http://twitter.com/$1">@$1</a>';
+				$replacement = ' <a target="' . $this->params->get('target') . '" class="tweet_mention" href="'. $protocol .'twitter.com/$1">@$1</a>';
 				$string = preg_replace($pattern, $replacement, $string);	
 			}
 
@@ -205,4 +207,24 @@
 				}
 			}
 		}
+
+		/*
+		* Set only once the web protocol
+		*/	
+		private function setProtocol() {
+				if($this->params->get('force_ssl')) {
+						$this->http_protocol = 'https://';
+				} else {
+						$this->http_protocol = 'http://';
+				}
+		}
+
+		/*
+		* Retreive the web protocol
+		*/	
+		public function getProtocol() {
+				return $this->http_protocol;
+		}
+
 	}
+

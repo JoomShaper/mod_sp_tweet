@@ -77,6 +77,10 @@
           <option value="_self">NEW_WINDOW</option>
           <option value="_blank">OWN_WINDOW</option>
         </field>
+        <field name="force_ssl" type="radio" default="0" class="btn-group" label="FORCE_SSL" description="FORCE_SSL_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
 
         <field type="spacer" name="tokens" hr="true" />
 
