@@ -109,7 +109,11 @@
 		<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
 		<field name="cachemode" type="hidden" default="static">
 			<option value="static"></option>
-		</field>		
+		</field>
+	        <field name="load_css" type="list" default="1" label="LOADCSS" description="LOADCSS_DESC">
+          		<option value="0">JNO</option>
+          		<option value="1">JYES</option>
+        	</field>
       </fieldset>
     </fields>
   </config>
