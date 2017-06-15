@@ -29,6 +29,7 @@
     $moduleName             = basename(dirname(__FILE__));
     $moduleID               = $module->id;
     $document               = JFactory::getDocument();
+    $loadCSS                = $params->get ('load_css',1);
     $cssFile                = JPATH_THEMES. '/'.$document->template.'/css/'.$moduleName.'.css';
 
     // Include helper.php
@@ -48,7 +49,7 @@
     if (is_array($data)) {
         if(file_exists($cssFile)) {
             $document->addStylesheet(JURI::base(true) . '/templates/'.$document->template.'/css/'. $moduleName.'.'. $style . '.css');
-        } else {
+        } elseif ($params->get('load_css')== 1 ) {
             $document->addStylesheet(JURI::base(true) . '/modules/'.$moduleName.'/assets/css/' . $moduleName.'.'. $style . '.css');
         }
 
