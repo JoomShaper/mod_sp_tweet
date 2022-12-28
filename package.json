@@ -1,0 +1,15 @@
+{
+  "name": "mod_sp_tweet",
+  "version": "3.0.0",
+  "description": "Joomla Module for Tweet",
+  "main": "gulpfile.js",
+  "repository": "git@github.com:JoomShaper/mod_sp_tweet.git",
+  "author": "Md Siddiqur Rahman <siddikcoder@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-zip": "^5.1.0"
+  }
+}
