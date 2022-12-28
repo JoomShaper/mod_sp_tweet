@@ -11,6 +11,7 @@ web.config.txt
 .history/
 .idea/
 .vscode/
+yarn.lock
 .DS_Store
 2020-bak.tar.gz
 jsv2.sql
