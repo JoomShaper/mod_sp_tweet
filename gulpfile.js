@@ -3,7 +3,7 @@ let zip = require('gulp-zip');
 let clean = require('gulp-clean');
 let cleanCSS = require('gulp-clean-css');
 
-let version = "mod_sp_tweet_v3.0.0.zip";
+let version = "mod_sp_tweet_v3.0.1.zip";
 
 gulp.task('copy_module_sp_tweet', () => gulp.src('./modules/mod_sp_tweet/**/*.*').pipe(gulp.dest('build/mod_sp_tweet')));
 

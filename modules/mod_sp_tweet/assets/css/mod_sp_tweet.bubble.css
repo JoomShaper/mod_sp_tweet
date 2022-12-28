@@ -2,7 +2,7 @@
 # mod_sp_tweet - Twitter Module by JoomShaper.com
 # -----------------------------------------------
 # Author    JoomShaper http://www.joomshaper.com
-# Copyright (C) 2010 - 2021 JoomShaper.com. All Rights Reserved.
+# Copyright (C) 2010 - 2023 JoomShaper.com. All Rights Reserved.
 # license - GNU/GPL V2 or Later
 # Websites: http://www.joomshaper.com
 */

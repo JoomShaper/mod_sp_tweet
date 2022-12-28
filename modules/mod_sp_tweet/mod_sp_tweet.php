@@ -3,7 +3,7 @@
 # mod_sp_tweet - Twitter Module by JoomShaper.com
 # -----------------------------------------------
 # Author    JoomShaper http://www.joomshaper.com
-# Copyright (C) 2010 - 2021 JoomShaper.com. All Rights Reserved.
+# Copyright (C) 2010 - 2023 JoomShaper.com. All Rights Reserved.
 # license - GNU/GPL V2 or Later
 # Websites: http://www.joomshaper.com
 */
@@ -56,9 +56,9 @@ if (is_array($data)) {
         $document->addStylesheet(Uri::base(true) . '/modules/'.$moduleName.'/assets/css/' . $moduleName.'.'. $style . '.css');
     }
 
-    if($params->get('animation')!=='none') {
-
-        if(JVERSION<3)
+    if ($params->get('animation')!=='none')
+    {
+        if (JVERSION < 3)
         {
             $document->addScript(Uri::base(true) . '/modules/'.$moduleName.'/assets/js/mod_sp_tweet.js');
         } 

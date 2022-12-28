@@ -3,7 +3,7 @@
 # mod_sp_tweet - Twitter Module by JoomShaper.com
 # -----------------------------------------------
 # Author    JoomShaper http://www.joomshaper.com
-# Copyright (C) 2010 - 2021 JoomShaper.com. All Rights Reserved.
+# Copyright (C) 2010 - 2023 JoomShaper.com. All Rights Reserved.
 # license - GNU/GPL V2 or Later
 # Websites: http://www.joomshaper.com
 */
@@ -14,7 +14,7 @@ use Joomla\CMS\Language\Text;
 ?>
 
 <div class="sp-tweet">
-	 <?php foreach($data as $i=>$value) { ?>
+	<?php foreach($data as $i=>$value) { ?>
 		<div class="sp-tweet-bubble" style="width:<?php echo round(100/count($data))?>%">
 			<div class="bubble-tl">
 				<div class="bubble-tr">
